@@ -6,7 +6,7 @@
 /*   By: ayassin <ayassin@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:08:19 by ayassin           #+#    #+#             */
-/*   Updated: 2021/12/26 11:01:19 by ayassin          ###   ########.fr       */
+/*   Updated: 2022/04/26 13:51:38 by ayassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		while (temp != 0)
 		{
 			tempnext = temp -> next;
-			del(temp -> content);
+			if (temp->content)
+			{
+				del(temp -> content);
+				temp->content = NULL;
+			}
 			free(temp);
 			temp = tempnext;
 		}

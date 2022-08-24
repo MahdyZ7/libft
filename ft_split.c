@@ -6,7 +6,7 @@
 /*   By: ayassin <ayassin@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 19:03:23 by ayassin           #+#    #+#             */
-/*   Updated: 2021/12/27 08:48:00 by ayassin          ###   ########.fr       */
+/*   Updated: 2022/04/26 09:40:53 by ayassin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,16 @@ static int	lennexchar(char const *s, char c)
 	return (len);
 }
 
-//static void	freearr()
+/* free the array of strings if a single malloc fails occure*/
+static void	freesplit(char **strarr)
+{
+	int	i;
+
+	i = 0;
+	while (strarr[i] != 0)
+		free(strarr[i++]);
+	free (strarr);
+}
 
 /*Returns am array of strings obtained by splitting "s" at char "c" occurences
 **malloc DANGER**/
@@ -64,8 +73,8 @@ char	**ft_split(char const *s, char c)
 		strarr[pos] = ft_substr(s, 0, lennexchar(s, c));
 		if (strarr[pos] == 0)
 		{
-			strarr[pos] = 0;
-			return (strarr);
+			freesplit (strarr);
+			return (NULL);
 		}
 		s += lennexchar(s, c);
 	}

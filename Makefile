@@ -6,7 +6,7 @@
 #    By: ayassin <ayassin@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 18:41:50 by ayassin           #+#    #+#              #
-#    Updated: 2022/01/30 15:57:03 by ayassin          ###   ########.fr        #
+#    Updated: 2022/08/24 10:31:24 by ayassin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OBJS = $(SRC:.c=.o)
 
 BNSOBJS = $(BONUS:.c=.o)
 
-all: $(NAME) bonus
+all: bonus
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -43,12 +43,12 @@ $(NAME): $(OBJS)
 bonus: $(BNSOBJS) $(OBJS)
 	ar cr $(NAME) $(BNSOBJS) $(OBJS)
 
-.PHONY: clean
 clean:
 	rm -f $(OBJS)  $(BNSOBJS)
 
-.PHONY: fclean
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: clean fclean all re

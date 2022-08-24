@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayassin <ayassin@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 19:57:17 by ayassin           #+#    #+#             */
-/*   Updated: 2021/12/26 20:30:10 by ayassin          ###   ########.fr       */
+/*   Updated: 2022/05/27 06:49:12 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Retun a string scince the first occurnce of string "needle" 
+/* Retun a string since the first occurnce of string "needle" 
 in the string "haystack" within "len" chars of "haystack"*/
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayassin <ayassin@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 20:10:47 by ayassin           #+#    #+#             */
-/*   Updated: 2021/12/26 12:05:05 by ayassin          ###   ########.fr       */
+/*   Updated: 2022/07/01 15:21:10 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 
 	len = 0;
 	clone = n;
-	if (n <= 0 )
+	if (n <= 0)
 		len++;
 	while (n != 0)
 	{
